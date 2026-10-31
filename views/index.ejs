@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game World</title>
+</head>
+<body>
+
+    <%- include('partials/header') %>
+
+    <h1>Welcome to <%= shopName %> - Owned by <%= ownerName %></h1>
+
+    <h2>Available Games</h2>
+
+    <% if (games.length > 0) { %>
+        <ul>
+            <% for (const game of games) { %>
+                <li>
+                    <%= game.title %> - $<%= game.price %>
+                </li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <p>No games available</p>
+    <% } %>
+
+    <%- include('partials/footer') %>
+
+</body>
+</html>
